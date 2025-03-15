@@ -1,12 +1,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting keychain)
+zstyle :omz:plugins:keychain agents ssh
+zstyle :omz:plugins:keychain identities id_rsa
 source $ZSH/oh-my-zsh.sh
-
-if [[ -o login && -o interactive ]]; then
-  eval $(keychain --eval ~/.ssh/id_rsa)
-  printf "\033[1A"
-fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
