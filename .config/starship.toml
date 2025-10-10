@@ -22,6 +22,7 @@ truncate_to_repo = false
 [hostname]
 ssh_only = false
 style = "bg:#a3aed2"
+ssh_symbol = "󰢹 "
 format = '[$ssh_symbol$hostname](bg:#a3aed2 fg:#090c0c)'
 
 [git_branch]
