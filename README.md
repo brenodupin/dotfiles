@@ -40,6 +40,14 @@ curl -sS https://starship.rs/install.sh | sh
 curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 ```
 
+***Tailscale***
+```bash
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale set --advertise-exit-node
+sudo tailscale up
+
+```
+
 **JetBrains Mono Nerd Font**
 
 Linux:
