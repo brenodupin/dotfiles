@@ -66,7 +66,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 **Miniconda:**
 
-Linux:
+Linux (for rpi use the [arm64](https://www.anaconda.com/docs/getting-started/miniconda/install#aws-graviton2%2Farm64) version):
 ```bash
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
@@ -93,4 +93,11 @@ git clone https://github.com/brenodupin/dotfiles.git
 cd dotfiles
 stow --adopt .
 ```
+
+### 5. Tweaks
+```bash
+conda config --add channels conda-forge
+conda config --set changeps1 False
+```
+
 
