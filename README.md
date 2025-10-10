@@ -1,7 +1,7 @@
 # Dotfiles Setup Guide
 
 (made by Claude)
-
+RPI case -> [Argon ONE](https://github.com/okunze/Argon40-ArgonOne-Script)
 ## Setup Instructions
 
 ### 1. Install Core Tools
