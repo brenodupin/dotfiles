@@ -1,27 +1,21 @@
+# Oh-My-Zsh
 export ZSH="$HOME/.oh-my-zsh"
-
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting keychain)
 zstyle :omz:plugins:keychain agents ssh
 zstyle :omz:plugins:keychain identities id_rsa
 source $ZSH/oh-my-zsh.sh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/brenodupin/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/brenodupin/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/brenodupin/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/brenodupin/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# Path
 export PATH="$PATH:$HOME/.local/bin"
+
+# Starship prompt
 eval "$(starship init zsh)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# Zoxide
+eval "$(zoxide init zsh --cmd cd)"
+
+# Source local tools (optional)
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# Source end machine-specific config
+[[ -f ~/.zshrc.end ]] && source ~/.zshrc.end
