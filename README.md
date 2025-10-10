@@ -9,7 +9,7 @@ RPI case -> [Argon ONE](https://github.com/okunze/Argon40-ArgonOne-Script)
 Ubuntu:
 ```bash
 sudo apt update
-sudo apt install -y zsh git curl stow wget zstd
+sudo apt install -y zsh git curl stow wget zstd fontconfig
 ```
 
 macOS:
