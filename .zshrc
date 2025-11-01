@@ -1,10 +1,16 @@
 # Oh-My-Zsh
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting keychain)
-zstyle :omz:plugins:keychain agents ssh
-zstyle :omz:plugins:keychain identities id_rsa
-source $ZSH/oh-my-zsh.sh
 
+# Conditional keychain plugin for non-macOS systems
+if [[ "$OSTYPE" != "darwin"* ]]; then
+  plugins=(git zsh-autosuggestions zsh-syntax-highlighting keychain)
+  zstyle :omz:plugins:keychain agents ssh
+  zstyle :omz:plugins:keychain identities id_rsa
+else
+  plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+fi
+
+source $ZSH/oh-my-zsh.sh
 # Path
 export PATH="$PATH:$HOME/.local/bin"
 
