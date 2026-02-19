@@ -108,4 +108,32 @@ conda config --add channels conda-forge
 conda config --set changeps1 False
 ```
 
+## Installing without sudo
 
+Some tools will need special handling if you don't have sudo access. Below are instructions for installing some of the tools without sudo.
+
+**zsh:**
+```bash
+wget https://sourceforge.net/projects/zsh/files/zsh/5.9/zsh-5.9.tar.xz/download -O zsh-5.9.tar.xz
+tar -xf zsh-5.9.tar.xz
+cd zsh-5.9
+./configure --prefix=$HOME/.local
+make -j16
+make install
+```
+
+**Starship:**
+```bash
+curl -sS https://starship.rs/install.sh | sh -s -- -b ~/.local/bin
+```
+
+**stow:**
+```bash
+wget http://ftp.gnu.org/gnu/stow/stow-latest.tar.gz
+tar -xzf stow-*.tar.gz
+cd stow-*
+./configure --prefix=$HOME/.local
+make -j16
+make install
+stow --help
+```
