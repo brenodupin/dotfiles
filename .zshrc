@@ -1,6 +1,9 @@
 # Oh-My-Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
+# Suppress the Oh-My-Zsh update prompt/reminder (run `omz update` manually when you want)
+zstyle ':omz:update' mode disabled
+
 # Conditional keychain plugin for non-macOS systems
 if [[ "$OSTYPE" != "darwin"* ]]; then
   plugins=(git zsh-autosuggestions zsh-syntax-highlighting keychain)
